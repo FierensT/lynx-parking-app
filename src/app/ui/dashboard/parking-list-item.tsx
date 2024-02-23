@@ -1,22 +1,34 @@
-"use client"
+"use client";
+import { usePathname, useRouter } from 'next/navigation';
 
-function doSomething(){
-console.log("yeet");
-}
 
 export default function ParkingListItem({
+  key,
   name,
   openstate,
   availablecapacity,
   roadname,
 }: {
+  key:number;
   name: string;
   openstate: string;
   availablecapacity: number;
   roadname: string;
 }) {
+
+  const pathname = usePathname();
+  const { replace }  = useRouter();
+
+  function navigateToParking() {
+    replace(`${pathname}/${name}}`);
+    }
+
+
   return (
-    <tr onClick={doSomething} className="w-full border-b py-3 text-sm cursor-pointer">
+    <tr key={key}
+      onClick={navigateToParking}
+      className="w-full border-b py-3 text-sm cursor-pointer"
+    >
       <td className="whitespace-nowrap py-3 pl-6 pr-3">
         <div className="flex items-center gap-3">
           <p>{name}</p>

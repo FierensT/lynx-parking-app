@@ -1,10 +1,13 @@
 export default function FormEntry({
   placeholder,
   name,
+  value
 }: {
   placeholder: string;
   name: string;
+  value:string;
 }) {
+
   return (
     <div>
       <label
@@ -19,6 +22,7 @@ export default function FormEntry({
           type="text"
           name={name}
           placeholder={`Enter ${placeholder.toLowerCase()} here.`}
+          defaultValue={value}
           required
         />
       </div>

@@ -1,10 +1,10 @@
-import { fetchAllParkings } from '@/app/lib/data';
-import ParkingListItem from '@/app/ui/dashboard/parking-list-item';
+import { fetchAllParkings } from "@/app/lib/data";
+import ParkingListItem from "@/app/ui/dashboard/parking-list-item";
 
 export default async function ParkingList() {
-    const parkings = await fetchAllParkings();
+  const parkings = await fetchAllParkings();
 
-    return (
+  return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
         <table className="text-gray-900">
@@ -26,13 +26,17 @@ export default async function ParkingList() {
           </thead>
           <tbody className="bg-white">
             {parkings?.map(
-              (parking: {
-                name: string;
-                isopennow: string;
-                availablecapacity: number;
-                locationanddimension: string;
-              }) => (
+              (
+                parking: {
+                  name: string;
+                  isopennow: string;
+                  availablecapacity: number;
+                  locationanddimension: string;
+                },
+                index: number
+              ) => (
                 <ParkingListItem
+                  key={index}
                   name={parking.name}
                   openstate={parking.isopennow}
                   availablecapacity={parking.availablecapacity}
