@@ -14,3 +14,4 @@ export async function createUserInfo(formData: FormData) {
   
     redirect('/dashboard');
   }
+
