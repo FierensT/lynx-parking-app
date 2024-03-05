@@ -3,9 +3,9 @@ import { lusitana } from '@/app/ui/fonts';
 export default function LynxLogo() {
   return (
     <div
-      className={`${lusitana.className} flex flex-row items-center leading-none`}
+      className={`${lusitana.className} flex flex-row items-center`}
     >
-      <p className="text-[44px]">Lynx Parking</p>
+      <p className="text-lg">Lynx Parking</p>
     </div>
   );
 }

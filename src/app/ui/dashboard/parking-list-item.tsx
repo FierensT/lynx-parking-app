@@ -8,13 +8,7 @@ export default function ParkingListItem({
   openstate,
   availablecapacity,
   roadname,
-}: {
-  key:number;
-  name: string;
-  openstate: string;
-  availablecapacity: number;
-  roadname: string;
-}) {
+}: parkingListItem) {
 
   const pathname = usePathname();
   const { replace }  = useRouter();

@@ -26,14 +26,9 @@ export default async function ParkingList() {
           </thead>
           <tbody className="bg-white">
             {parkings?.map(
-              (
-                parking: {
-                  name: string;
-                  isopennow: string;
-                  availablecapacity: number;
-                  locationanddimension: string;
-                },
-                index: number
+              ( 
+                parking,
+                index
               ) => (
                 <ParkingListItem
                   key={index}
